@@ -10,4 +10,9 @@ For more information about Scrypted, visit [the Scrypted website](https://scrypt
 
 ## Installation
 
-Add the repository [https://github.com/aegjoyce/ha-addons](https://github.com/aegjoyce/ha-addons) in Home Assistant, see [https://www.home-assistant.io/hassio/installing_third_party_addons/](https://www.home-assistant.io/hassio/installing_third_party_addons/).
+Add the repository [https://github.com/aegjoyce/ha-addons](https://github.com/aegjoyce/ha-addons) in Home Assistant - see [https://www.home-assistant.io/hassio/installing_third_party_addons/](https://www.home-assistant.io/hassio/installing_third_party_addons/) for more information.
+Then select the Scrypted add-on and click Install.
+
+## To-Do
+
+
