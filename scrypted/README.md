@@ -35,4 +35,4 @@ For external access, make sure you forward port 10443 to your Home Assistant ins
 - Testing on different architectures to ensure compatibility (armv7 and amd64 are untested, and I have listed armhf and i386 as incompatible for now as the docker multi-arch image does not include these architectures
 - Better integration within Home Assistant - Ingress or WebUI support
 - Try to get Scrypted to use Home Assistant certificates
-- Relocate Scrypted database to Config folder to allow for easier database editing/importing/exporting
+- --Relocate Scrypted database to Config folder to allow for easier database editing/importing/exporting-- Done
