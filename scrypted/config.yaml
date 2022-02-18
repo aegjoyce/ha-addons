@@ -12,3 +12,6 @@ environment:
   SCRYPTED_VOLUME: "/data/server/volume"
 backup_exclude:
   - /server
+webui: "https://[HOST]:[PORT:10443]/endpoint/@scrypted/core/public/#/"
+stage: experimental
+advanced: true
