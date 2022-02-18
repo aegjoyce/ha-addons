@@ -8,11 +8,17 @@ This add-on allows you to set up Scrypted on your Home Assistant instance.
 Scrypted offers many benefits, but perhaps its most useful function is providing super-low-latency HomeKit camera streaming and support for HomeKit Secure Video.
 For more information about Scrypted, visit [the Scrypted website](https://scrypted.app).
 
+## System requirements
+
+- Home Assistant OS or Supervised installation running on aarch64, amd64 or armv7 architecture (if you have Home Assistant Core or Container installed then install Scrypted in a separate container using the instructions at [the Scrypted GitHub page](https://github.com/koush/scrypted).
+- At least 2GB free storage space
+- Raspberry Pi 4 or faster machine (performance noticeably worse on Raspberry Pi 3B)
+
 ## Installation
 
 Add the repository [https://github.com/aegjoyce/ha-addons](https://github.com/aegjoyce/ha-addons) in Home Assistant - see [https://www.home-assistant.io/hassio/installing_third_party_addons/](https://www.home-assistant.io/hassio/installing_third_party_addons/) for more information.
-Then select the Scrypted add-on and click Install.
+Then select the Scrypted add-on and click Install. **This may take 5-10 minutes to complete as the image is approximately 2GB in size.**
 
-## To-Do
+## To-do
 
-
+- Testing on different architectures to ensure compatibility (armv7 and amd64 are untested, and 
