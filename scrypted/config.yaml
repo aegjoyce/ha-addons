@@ -4,6 +4,9 @@ slug: scrypted
 description: "A home automation platform powered by node.js"
 arch:
   - aarch64
+  - amd64
+  - armhf
+  - armv7
 image: koush/scrypted
 host_network: true
 environment:
