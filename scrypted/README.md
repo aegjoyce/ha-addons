@@ -24,8 +24,13 @@ Then select the Scrypted add-on and click Install. **This may take 5-10 minutes 
 
 Once installed, make sure you enable Watchdog so that the Scrypted add-on will restart automatically if you need to restart Scrypted from within its UI.
 
+Scrypted will then be accessible via **[YOUR_HOME_ASSISTANT_ADDRESS]:10443** - check the add-on logs after clicking 'Start' to confirm the server address.
 
+You will likely need to approve a security/certificate message the first time you access Scrypted.
+
+For external access, make sure you forward port 10443 to your Home Assistant instance on your router.
 
 ## To-do
 
-- Testing on different architectures to ensure compatibility (armv7 and amd64 are untested, and 
+- Testing on different architectures to ensure compatibility (armv7 and amd64 are untested, and I have listed armhf and i386 as incompatible for now as the docker multi-arch image does not include these architectures
+- Better integration within Home Assistant - Ingress or WebUI support
