@@ -9,7 +9,7 @@ arch:
 image: koush/scrypted
 host_network: true
 environment:
-  SCRYPTED_VOLUME: "/data/server/volume"
+  SCRYPTED_VOLUME: "/config/scrypted"
 backup_exclude:
   - /server
 webui: "https://[HOST]:[PORT:10443]"
