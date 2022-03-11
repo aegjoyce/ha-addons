@@ -1,5 +1,5 @@
 name: "Scrypted"
-version: "0.0.150"
+version: "0.0.151"
 slug: scrypted
 description: "A home automation platform powered by node.js"
 arch:
