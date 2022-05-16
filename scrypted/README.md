@@ -38,4 +38,4 @@ For external access, make sure you forward port 10443 to your Home Assistant ins
 - Apparmor support
 - Try to get Scrypted to use Home Assistant certificates
 - ~~Relocate Scrypted database to Config folder to allow for easier database editing/importing/exporting~~ - done
-- Proper implementation of changelog and versioning
+- ~~Proper implementation of changelog and versioning~~ - done
