@@ -30,6 +30,8 @@ You will likely need to approve a security/certificate message the first time yo
 
 For external access, make sure you forward port 10443 to your Home Assistant instance on your router.
 
+To export your configuration and database, make and download a backup of the Scrypted add-on. Data is stored in /scrypted_data.
+
 ## To-do
 
 - Testing on different architectures to ensure compatibility (armv7 and amd64 are untested, and I have listed armhf and i386 as incompatible for now as the docker multi-arch image does not include these architectures)
