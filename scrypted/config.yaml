@@ -10,11 +10,9 @@ arch:
 image: koush/scrypted
 host_network: true
 environment:
-  SCRYPTED_VOLUME: "/config/scrypted"
+  SCRYPTED_VOLUME: "/data/scrypted_data"
 backup_exclude:
   - /server
 webui: "https://[HOST]:[PORT:10443]"
 stage: experimental
 advanced: true
-map:
-  - config:rw
