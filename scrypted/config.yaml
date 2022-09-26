@@ -1,5 +1,5 @@
 name: "Scrypted"
-version: "v0.2.8"
+version: "v0.2.9"
 slug: scrypted
 description: "A home automation platform powered by node.js"
 url: "https://github.com/koush/scrypted"
