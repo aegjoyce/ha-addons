@@ -16,5 +16,5 @@ backup_exclude:
 webui: "https://[HOST]:[PORT:10443]"
 stage: experimental
 advanced: true
-init: true
+init: false
 hassio_role: default
