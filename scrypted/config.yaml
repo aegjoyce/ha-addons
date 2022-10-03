@@ -17,3 +17,4 @@ webui: "https://[HOST]:[PORT:10443]"
 stage: experimental
 advanced: true
 init: true
+hassio_role: default
