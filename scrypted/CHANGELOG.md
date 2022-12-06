@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Temporarily update base image to latest whilst npm issues persist
 
+## [0.4.4] - 2022-12-06
+### Changed
+- Update base image to 0.4.4
+
 ## [0.4.1] - 2022-11-22
 ### Changed
 - Update base image to 0.4.1
