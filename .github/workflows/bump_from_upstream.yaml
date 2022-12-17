@@ -12,7 +12,7 @@ jobs:
         run: |
           echo ::set-output name=tag::$( \
           curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
-          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("v") and (endswith(".lite") | not and (endswith("s6") | not ))][0] | .name')
+          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("v") and (endswith(".lite") | not) and (endswith(".s6") | not))][0] | .name')
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: 🏗 Set up yq
