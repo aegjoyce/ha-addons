@@ -1,0 +1,42 @@
+name: Update Scrypted Thin
+on:
+  schedule:
+    - cron: 17 * * * *
+  workflow_dispatch:
+jobs:
+  Get-Remote-Version-Bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest tag
+        id: latest
+        run: |
+          echo ::set-output name=tag::$( \
+          curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
+          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-thin-v"))][0] | .name')
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: 🏗 Set up yq
+        uses: frenck/action-setup-yq@v1
+      - name: Get current version
+        id: current
+        run: echo ::set-output name=tag::$(yq '.version' ${{ github.workspace }}/scrypted-thin/config.yaml)
+      - uses: madhead/semver-utils@latest
+        id: version
+        with:
+          # A version to work with
+          version: ${{ steps.current.outputs.tag }}
+
+          # A version to compare against
+          compare-to: ${{ steps.latest.outputs.tag }}
+      - name: If newer tag available, bump the package version
+        if: ${{ steps.version.outputs.comparison-result == '<' }}
+        shell: bash
+        run: |
+          yq -i '.version = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-thin/config.yaml
+      - uses: actions/setup-python@v3
+        if: ${{ steps.version.outputs.comparison-result == '<' }}
+        with:
+          python-version: "3.10.4"
+      - name: If newer tag available, bump the changelog
+        if: ${{ steps.version.outputs.comparison-result == '<' }}
+        run: pip install -r scripts/requirements.txt && python scripts/update_changelog_thin.py "${{ steps.latest.outputs.tag }}"
