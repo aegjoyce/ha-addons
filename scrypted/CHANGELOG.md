@@ -4,9 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [FIX] - 2022-09-13
+## [18-bullseye-full-v0.4.9] - 2022-12-21
 ### Changed
-- Temporarily update base image to latest whilst npm issues persist
+- Update base image to 18-bullseye-full-v0.4.9
 
 ## [0.4.8-18-bullseye-thin] - 2022-12-20
 ### Changed
@@ -67,6 +67,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.2.8] - 2022-09-14
 ### Changed
 - Update base image to 0.2.8
+
+## [FIX] - 2022-09-13
+### Changed
+- Temporarily update base image to latest whilst npm issues persist
 
 ## [0.2.5] - 2022-09-09
 ### Changed
