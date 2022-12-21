@@ -1,7 +1,7 @@
 name: "Scrypted Lite"
 version: "18-bullseye-lite-v0.4.9"
 slug: scrypted-lite
-description: "A home automation platform powered by node.js"
+description: "Lite version of Scrypted with smaller image size and some dependencies removed"
 url: "https://github.com/koush/scrypted"
 arch:
   - aarch64
