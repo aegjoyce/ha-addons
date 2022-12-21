@@ -1,6 +1,6 @@
-name: "Scrypted"
+name: "Scrypted Lite"
 version: "18-bullseye-lite-v0.4.9"
-slug: scrypted
+slug: scrypted-lite
 description: "A home automation platform powered by node.js"
 url: "https://github.com/koush/scrypted"
 arch:
