@@ -19,7 +19,7 @@ jobs:
         uses: frenck/action-setup-yq@v1
       - name: Get current version
         id: current
-        run: echo ::set-output name=tag::$(yq '.version |= sub("18-bullseye-thin-v", "")' ${{ github.workspace }}/scrypted-thin/config.yaml)
+        run: echo ::set-output name=tag::$(yq r ${{ github.workspace }}/scrypted-thin/config.yaml version)
       - uses: madhead/semver-utils@latest
         id: version
         with:
