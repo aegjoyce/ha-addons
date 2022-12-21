@@ -39,9 +39,4 @@ jobs:
           python-version: "3.10.4"
       - name: If newer tag available, bump the changelog
         if: ${{ steps.version.outputs.comparison-result == '<' }}
-        run: pip install -r scripts/requirements.txt && python scripts/update_changelog.py "${{ steps.latest.outputs.tag }}"
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        if: ${{ steps.version.outputs.comparison-result == '<' }}
-        with:
-          commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
-          tagging_message: "${{ steps.latest.outputs.tag }}"
+        run: pip install -r scripts/requirements.txt && python scripts/update_changelog_lite.py "${{ steps.latest.outputs.tag }}"
