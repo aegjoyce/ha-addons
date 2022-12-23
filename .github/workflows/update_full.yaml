@@ -55,4 +55,4 @@ jobs:
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         with:
           commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
-          tagging_message: "${{ steps.latest.outputs.tag }}"
+          tagging_message: "${{ steps.latest-short.outputs.tag }}"
