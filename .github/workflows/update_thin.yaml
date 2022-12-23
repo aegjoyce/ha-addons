@@ -25,15 +25,20 @@ jobs:
         uses: frenck/action-setup-yq@v1
       - name: Get current version
         id: current
-        run: echo ::set-output name=tag::$(yq '.version' ${{ github.workspace }}/scrypted-thin/config.yaml | jq -r 'ltrimstr("18-bullseye-thin-v")')
+        run: echo ::set-output name=tag::$(yq '.version' ${{ github.workspace }}/scrypted-thin/config.yaml)
+      - name: Shorten tag
+        env:
+          TAG: ${{ steps.current.outputs.tag }}
+        id: current-short
+        run: echo "::set-output name=tag::${TAG##*v}"
       - uses: madhead/semver-utils@latest
         id: version
         with:
           # A version to work with
-          version: ${{ steps.current.outputs.tag }}
+          version: ${{ steps.current-short.outputs.tag }}
 
           # A version to compare against
-          compare-to: ${{ steps.latest.outputs.tag }}
+          compare-to: ${{ steps.latest-short.outputs.tag }}
       - name: If newer tag available, bump the package version
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         shell: bash
