@@ -12,13 +12,13 @@ jobs:
         run: |
           echo ::set-output name=tag::$( \
           curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
-          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-thin-v"))][0] | .name')
+          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-thin-"))][0] | .name')
       - name: Shorten tag
         id: latest-short
         run: |
           echo ::set-output name=tag::$( \
           curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
-          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-thin-v"))][0] | .name | ltrimstr("18-bullseye-thin-v")')
+          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-thin-"))][0] | .name | ltrimstr("18-bullseye-thin-")')
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: 🏗 Set up yq
@@ -30,7 +30,7 @@ jobs:
         env:
           TAG: ${{ steps.current.outputs.tag }}
         id: current-short
-        run: echo "::set-output name=tag::${TAG##*v}"
+        run: echo "::set-output name=tag::${TAG##*thin-}"
       - uses: madhead/semver-utils@latest
         id: version
         with:
