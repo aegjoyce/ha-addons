@@ -51,3 +51,5 @@ jobs:
       - name: If newer tag available, bump the changelog
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: pip install -r scripts/requirements.txt && python scripts/update_changelog_thin.py "${{ steps.latest-short.outputs.tag }}"
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        if: ${{ steps.version.outputs.comparison-result == '<' }}
