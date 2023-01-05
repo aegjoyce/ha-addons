@@ -1,5 +1,5 @@
 name: "Scrypted"
-version: "18-bullseye-full-v0.5.7"
+version: "18-bullseye-full-v0.5.10"
 slug: scrypted
 description: "A home automation platform powered by node.js"
 url: "https://github.com/koush/scrypted"
