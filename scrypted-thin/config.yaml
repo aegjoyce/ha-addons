@@ -1,5 +1,5 @@
 name: "Scrypted Thin"
-version: "18-bullseye-thin-v0.6.3"
+version: "18-bullseye-thin-v0.6.4"
 slug: scrypted-thin
 description: "Thin version of Scrypted with smaller image size and some dependencies removed"
 url: "https://github.com/koush/scrypted"
