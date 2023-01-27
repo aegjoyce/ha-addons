@@ -1,5 +1,5 @@
 name: "Scrypted Lite"
-version: "18-bullseye-lite-v0.6.9"
+version: "18-bullseye-lite-v0.6.10"
 slug: scrypted-lite
 description: "Lite version of Scrypted with smaller image size and some dependencies removed"
 url: "https://github.com/koush/scrypted"
