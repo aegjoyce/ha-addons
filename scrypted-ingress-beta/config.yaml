@@ -1,0 +1,20 @@
+name: "Scrypted"
+version: "v0.5.11"
+slug: scrypted-ingress-beta
+description: "A home automation platform powered by node.js"
+url: "https://github.com/koush/scrypted"
+arch:
+  - aarch64
+  - amd64
+  - armv7
+init: false
+host_network: true
+ingress: true
+ingress_port: 80
+panel_icon: mdi:memory
+hassio_api: true
+ingress_stream: true
+environment:
+  SCRYPTED_VOLUME: "/data/scrypted_data"
+backup_exclude:
+  - /server

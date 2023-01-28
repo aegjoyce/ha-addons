@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: Scrypted
+# Runs the Nginx daemon
+# ==============================================================================
+
+# Wait for the Scrypted service to become available
+bashio::net.wait_for 10443
+
+bashio::log.info "Starting NGinx..."
+
+exec nginx
