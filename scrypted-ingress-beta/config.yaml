@@ -1,4 +1,4 @@
-name: "Scrypted"
+name: "Scrypted Ingress Beta"
 version: "v0.5.11"
 slug: scrypted-ingress-beta
 description: "A home automation platform powered by node.js"
