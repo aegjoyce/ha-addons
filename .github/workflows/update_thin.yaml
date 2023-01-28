@@ -1,5 +1,7 @@
 name: Update Scrypted Thin
 on:
+  schedule:
+    - cron: 0 12 * * *
   workflow_dispatch:
 jobs:
   Get-Remote-Version-Bump:
