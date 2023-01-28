@@ -12,7 +12,7 @@ jobs:
           curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
           | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-full-"))][0] | .name | ltrimstr("18-bullseye-full-")')
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.3.0
       - name: 🏗 Set up yq
         uses: frenck/action-setup-yq@v1
       - name: Get current version
