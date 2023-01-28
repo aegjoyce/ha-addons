@@ -39,7 +39,7 @@ jobs:
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: |
           sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted-lite/Dockerfile
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         with:
           python-version: "3.10.4"
