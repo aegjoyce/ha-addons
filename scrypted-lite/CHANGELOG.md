@@ -20,10 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Update base image to 0.6.10
 
-## [0.6.10] - 2023-01-28
-### Changed
-- Update base image to 0.6.10
-
 ## [0.6.9] - 2023-01-27
 ### Changed
 - Update base image to 0.6.9
