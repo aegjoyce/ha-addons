@@ -20,7 +20,9 @@ environment:
 backup_exclude:
   - /server
 #  SCRYPTED_HTTPS_OPTIONS_FILE: "/config/data_scrypted/options.json"
-#ports:
-#  10444/tcp: 10444
-#ports_description:
-#  10444/tcp: "Homekit"
+ports:
+  10443/tcp: 10443
+  10444/tcp: 10444
+ports_description:
+  10443/tcp: "Scrypted"
+  10444/tcp: "Homekit"
