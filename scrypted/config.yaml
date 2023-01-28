@@ -13,6 +13,7 @@ ingress_port: 80
 panel_icon: mdi:memory
 hassio_api: true
 ingress_stream: true
+usb: true
 image: "ghcr.io/aegjoyce/{arch}-ha-addon-scrypted"
 environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
