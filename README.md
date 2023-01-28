@@ -7,3 +7,11 @@ Repository for my custom add-ons.
 ## Scrypted
 
 Work-in-progress. A Scrypted add-on for high-performance HomeKit camera performance.
+
+## Scrypted Lite
+
+Work-in-progress. Lite version of Scrypted with smaller image size and some dependencies removed
+
+## Scrypted Thin
+
+Work-in-progress. Thin version of Scrypted with smaller image size and some dependencies removed
