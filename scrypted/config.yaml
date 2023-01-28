@@ -20,10 +20,3 @@ environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
 backup_exclude:
   - /server
-#  SCRYPTED_HTTPS_OPTIONS_FILE: "/config/data_scrypted/options.json"
-ports:
-  10443/tcp: 10443
-  10444/tcp: 10444
-ports_description:
-  10443/tcp: "Scrypted"
-  10444/tcp: "Homekit"
