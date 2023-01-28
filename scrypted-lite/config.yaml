@@ -1,20 +1,25 @@
-name: "Scrypted Lite"
-version: "18-bullseye-lite-v0.6.10"
+name: Scrypted Lite
+version: "v0.6.9"
 slug: scrypted-lite
-description: "Lite version of Scrypted with smaller image size and some dependencies removed"
+description: Lite version of Scrypted with smaller image size and some dependencies removed
 url: "https://github.com/koush/scrypted"
 arch:
-  - aarch64
   - amd64
+  - aarch64
   - armv7
-image: koush/scrypted
-host_network: true
+init: false
+ingress: true
+ingress_port: 80
+panel_icon: mdi:memory
+hassio_api: true
+ingress_stream: true
+image: "ghcr.io/aegjoyce/{arch}-ha-addon-scrypted-lite"
 environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
 backup_exclude:
   - /server
-webui: "https://[HOST]:[PORT:10443]"
-stage: experimental
-advanced: true
-init: false
-hassio_role: default
+#  SCRYPTED_HTTPS_OPTIONS_FILE: "/config/data_scrypted/options.json"
+#ports:
+#  10444/tcp: 10444
+#ports_description:
+#  10444/tcp: "Homekit"

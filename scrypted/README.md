@@ -34,13 +34,9 @@ Add the repository [https://github.com/aegjoyce/ha-addons](https://github.com/ae
 
 Then select the Scrypted add-on and click Install. **This may take 5-10 minutes to complete as the image is approximately 2GB in size.**
 
-Once installed, make sure you enable Watchdog so that the Scrypted add-on will restart automatically if you need to restart Scrypted from within its UI.
+Once installed, make sure you enable Watchdog so that the Scrypted add-on will restart automatically if you need to restart Scrypted from within its UI, and add Scrypted to the sidebar.
 
-Scrypted will then be accessible via **[YOUR_HOME_ASSISTANT_ADDRESS]:10443** - check the add-on logs after clicking 'Start' to confirm the server address.
-
-You will likely need to approve a security/certificate message the first time you access Scrypted.
-
-For external access, make sure you forward port 10443 to your Home Assistant instance on your router.
+Scrypted will then be accessible via the icon in the sidebar, or at **[YOUR_HOME_ASSISTANT_ADDRESS]:10443** - check the add-on logs after clicking 'Start' to confirm the server address.
 
 To export your configuration and database, make and download a backup of the Scrypted add-on. Data is stored in /scrypted_data.
 
@@ -48,8 +44,7 @@ To export your configuration and database, make and download a backup of the Scr
 
 - Testing on different architectures to ensure compatibility (armv7 and amd64 are untested, and I have listed armhf and i386 as incompatible for now as the docker multi-arch image does not include these architectures)
 - ~~WebUI support~~ - done
-- Ingress support
+- ~~Ingress support~~ - done
 - Apparmor support
-- Try to get Scrypted to use Home Assistant certificates
 - ~~Relocate Scrypted database to Config folder to allow for easier database editing/importing/exporting~~ - done
 - ~~Proper implementation of changelog and versioning~~ - done

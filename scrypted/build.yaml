@@ -1,0 +1,10 @@
+build_from:
+  aarch64: "homeassistant/aarch64-base-debian:bullseye"
+  amd64: "homeassistant/amd64-base-debian:bullseye"
+  armv7: "homeassistant/armv7-base-debian:bullseye"
+labels:
+  org.opencontainers.image.title: "Scrypted Add-on for Home Assistant"
+  org.opencontainers.image.description: "A home automation platform powered by node.js"
+  org.opencontainers.image.source: "https://github.com/aegjoyce/ha-addons"
+  org.opencontainers.image.licenses: "Apache"
+  org.opencontainers.image.version: "v0.6.9"

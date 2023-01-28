@@ -1,7 +1,5 @@
 name: Update Scrypted Full
 on:
-  schedule:
-    - cron: 17 * * * *
   workflow_dispatch:
 jobs:
   Get-Remote-Version-Bump:
@@ -9,12 +7,6 @@ jobs:
     steps:
       - name: Get latest tag
         id: latest
-        run: |
-          echo ::set-output name=tag::$( \
-          curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
-          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-full-"))][0] | .name')
-      - name: Shorten tag
-        id: latest-short
         run: |
           echo ::set-output name=tag::$( \
           curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
@@ -26,33 +18,42 @@ jobs:
       - name: Get current version
         id: current
         run: echo ::set-output name=tag::$(yq '.version' ${{ github.workspace }}/scrypted/config.yaml)
-      - name: Shorten tag
-        env:
-          TAG: ${{ steps.current.outputs.tag }}
-        id: current-short
-        run: echo "::set-output name=tag::${TAG##*full-}"
       - uses: madhead/semver-utils@latest
         id: version
         with:
           # A version to work with
-          version: ${{ steps.current-short.outputs.tag }}
-
+          version: ${{ steps.current.outputs.tag }}
           # A version to compare against
-          compare-to: ${{ steps.latest-short.outputs.tag }}
-      - name: If newer tag available, bump the package version
+          compare-to: ${{ steps.latest.outputs.tag }}
+      - name: If newer tag available, bump the version
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         shell: bash
         run: |
           yq -i '.version = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted/config.yaml
+      - name: If newer tag available, bump the package version
+        if: ${{ steps.version.outputs.comparison-result == '<' }}
+        shell: bash
+        run: |
+          yq -i '.labels."org.opencontainers.image.version" = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted/build.yaml
+      - name: If newer tag available, bump the dockerfile
+        if: ${{ steps.version.outputs.comparison-result == '<' }}
+        run: |
+          sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted/Dockerfile
       - uses: actions/setup-python@v3
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         with:
           python-version: "3.10.4"
       - name: If newer tag available, bump the changelog
         if: ${{ steps.version.outputs.comparison-result == '<' }}
-        run: pip install -r scripts/requirements.txt && python scripts/update_changelog_full.py "${{ steps.latest-short.outputs.tag }}"
-      - uses: stefanzweifel/git-auto-commit-action@v4
+        run: pip install -r scripts/requirements.txt && python scripts/update_changelog_full.py "${{ steps.latest.outputs.tag }}"
+      # - uses: stefanzweifel/git-auto-commit-action@v4
+      #   if: ${{ steps.version.outputs.comparison-result == '<' }}
+      #   with:
+      #     commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
+      - name: Create Pull Request
         if: ${{ steps.version.outputs.comparison-result == '<' }}
+        uses: peter-evans/create-pull-request@v4
         with:
-          commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
-          tagging_message: "${{ steps.latest-short.outputs.tag }}"
+          commit-message: Bump Scrypted to ${{ steps.latest.outputs.tag }}
+          title: Bump Scrypted to ${{ steps.latest.outputs.tag }}
+          branch: create-pull-request/scrypted
