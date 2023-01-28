@@ -56,3 +56,4 @@ jobs:
         with:
           commit-message: Bump Scrypted to ${{ steps.latest.outputs.tag }}
           title: Bump Scrypted to ${{ steps.latest.outputs.tag }}
+          branch: create-pull-request/scrypted
