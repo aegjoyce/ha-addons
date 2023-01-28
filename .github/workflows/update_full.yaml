@@ -54,5 +54,5 @@ jobs:
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: Bump to ${{ steps.latest.outputs.tag }}
-          title: Bump to ${{ steps.latest.outputs.tag }}
+          commit-message: Bump Scrypted to ${{ steps.latest.outputs.tag }}
+          title: Bump Scrypted to ${{ steps.latest.outputs.tag }}
