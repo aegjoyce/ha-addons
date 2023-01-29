@@ -48,10 +48,6 @@ jobs:
       - name: If newer tag available, bump the changelog
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: pip install -r scripts/requirements.txt && python scripts/update_changelog_full.py "${{ steps.latest.outputs.tag }}"
-      # - uses: stefanzweifel/git-auto-commit-action@v4
-      #   if: ${{ steps.version.outputs.comparison-result == '<' }}
-      #   with:
-      #     commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
       - name: Create Pull Request
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         uses: peter-evans/create-pull-request@v4
