@@ -24,7 +24,7 @@ jobs:
         env:
           TAG: ${{ steps.current-hotfix.outputs.tag }}
         id: current
-        run: echo "::set-output name=tag::${TAG%%*-}"
+        run: echo "::set-output name=tag::${TAG%-*}"
       - uses: madhead/semver-utils@latest
         id: version
         with:
