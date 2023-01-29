@@ -17,9 +17,14 @@ jobs:
         uses: actions/checkout@v3.3.0
       - name: 🏗 Set up yq
         uses: frenck/action-setup-yq@v1
-      - name: Get current version
-        id: current
+      - name: Get current version with hotfixes
+        id: current-hotfix
         run: echo ::set-output name=tag::$(yq '.version' ${{ github.workspace }}/scrypted-lite/config.yaml)
+      - name: Strip out hotfix version
+        env:
+          TAG: ${{ steps.current-hotfix.outputs.tag }}
+        id: current
+        run: echo "::set-output name=tag::${TAG%-*}"
       - uses: madhead/semver-utils@latest
         id: version
         with:
