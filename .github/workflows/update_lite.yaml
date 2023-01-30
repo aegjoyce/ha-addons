@@ -10,21 +10,21 @@ jobs:
       - name: Get latest tag
         id: latest
         run: |
-          echo ::set-output name=tag::$( \
+          echo "tag=$( \
           curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
-          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-lite-"))][0] | .name | ltrimstr("18-bullseye-lite-")')
+          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-lite-"))][0] | .name | ltrimstr("18-bullseye-lite-")') >> $GITHUB_OUTPUT
       - name: Check out repository code
         uses: actions/checkout@v3.3.0
       - name: 🏗 Set up yq
         uses: frenck/action-setup-yq@v1
       - name: Get current version with hotfixes
         id: current-hotfix
-        run: echo ::set-output name=tag::$(yq '.version' ${{ github.workspace }}/scrypted-lite/config.yaml)
+        run: echo "tag=$(yq '.version' ${{ github.workspace }}/scrypted-lite/config.yaml)" >> $GITHUB_OUTPUT
       - name: Strip out hotfix version
         env:
           TAG: ${{ steps.current-hotfix.outputs.tag }}
         id: current
-        run: echo "::set-output name=tag::${TAG%-*}"
+        run: echo "tag=${TAG%-*}" >> $GITHUB_OUTPUT
       - uses: madhead/semver-utils@latest
         id: version
         with:
