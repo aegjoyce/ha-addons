@@ -12,14 +12,19 @@ jobs:
         run: |
           echo ::set-output name=tag::$( \
           curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
-          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-full-"))][0] | .name | ltrimstr("18-bullseye-full-")')
+          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-full-"))][0] | .name | ltrimstr("18-bullseye-full-") | rtrimstr("-")')
       - name: Check out repository code
         uses: actions/checkout@v3.3.0
       - name: 🏗 Set up yq
         uses: frenck/action-setup-yq@v1
-      - name: Get current version
-        id: current
+      - name: Get current version with hotfixes
+        id: current-hotfix
         run: echo ::set-output name=tag::$(yq '.version' ${{ github.workspace }}/scrypted/config.yaml)
+      - name: Strip out hotfix version
+        env:
+          TAG: ${{ steps.current-hotfix.outputs.tag }}
+        id: current
+        run: echo "::set-output name=tag::${TAG%-*}"
       - uses: madhead/semver-utils@latest
         id: version
         with:
@@ -48,10 +53,6 @@ jobs:
       - name: If newer tag available, bump the changelog
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: pip install -r scripts/requirements.txt && python scripts/update_changelog_full.py "${{ steps.latest.outputs.tag }}"
-      # - uses: stefanzweifel/git-auto-commit-action@v4
-      #   if: ${{ steps.version.outputs.comparison-result == '<' }}
-      #   with:
-      #     commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
       - name: Create Pull Request
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         uses: peter-evans/create-pull-request@v4
