@@ -1,5 +1,5 @@
 name: Scrypted Thin
-version: "v0.6.10-1"
+version: "v0.6.10-2"
 slug: scrypted-thin
 description: Thin version of Scrypted with smaller image size and some dependencies removed
 url: "https://github.com/koush/scrypted"
@@ -9,7 +9,7 @@ arch:
   - armv7
 init: false
 ingress: true
-ingress_port: 80
+ingress_port: 0
 panel_icon: mdi:memory
 hassio_api: true
 ingress_stream: true
