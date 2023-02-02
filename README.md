@@ -6,12 +6,42 @@ Repository for my custom add-ons.
 
 ## Scrypted
 
+![aarch64-support](https://img.shields.io/badge/aarch64-yes-green.svg)
+![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted/latest_tag?trim=major&label=latest)
+![amd64-support](https://img.shields.io/badge/amd64-yes-green.svg)
+![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted/latest_tag?trim=major&label=latest)
+![armv7-support](https://img.shields.io/badge/armv7-yes-green.svg)
+![armv7-version](https://ghcr-badge.deta.dev/aegjoyce/armv7-ha-addon-scrypted/latest_tag?trim=major&label=latest)
+
+![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
+![i386-support](https://img.shields.io/badge/i386-no-red.svg)
+
 Work-in-progress. A Scrypted add-on for high-performance HomeKit camera performance.
 
 ## Scrypted Lite
 
+![aarch64-support](https://img.shields.io/badge/aarch64-yes-green.svg)
+![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
+![amd64-support](https://img.shields.io/badge/amd64-yes-green.svg)
+![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
+![armv7-support](https://img.shields.io/badge/armv7-yes-green.svg)
+![armv7-version](https://ghcr-badge.deta.dev/aegjoyce/armv7-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
+
+![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
+![i386-support](https://img.shields.io/badge/i386-no-red.svg)
+
 Work-in-progress. Lite version of Scrypted with smaller image size and some dependencies removed.
 
 ## Scrypted Thin
+
+![aarch64-support](https://img.shields.io/badge/aarch64-yes-green.svg)
+![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted-thin/latest_tag?trim=major&label=latest)
+![amd64-support](https://img.shields.io/badge/amd64-yes-green.svg)
+![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted-thin/latest_tag?trim=major&label=latest)
+![armv7-support](https://img.shields.io/badge/armv7-yes-green.svg)
+![armv7-version](https://ghcr-badge.deta.dev/aegjoyce/armv7-ha-addon-scrypted-thin/latest_tag?trim=major&label=latest)
+
+![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
+![i386-support](https://img.shields.io/badge/i386-no-red.svg)
 
 Work-in-progress. Thin version of Scrypted with smaller image size and some dependencies removed.
