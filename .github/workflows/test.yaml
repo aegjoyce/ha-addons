@@ -19,7 +19,7 @@ jobs:
           ## [${{ steps.latest.outputs.tag }}]\
           ### Changed\
           - Update base image to ${{ steps.latest.outputs.tag }}\
-          " "" ${{ github.workspace }}/scrypted/CHANGELOG.md
+          " ${{ github.workspace }}/scrypted/CHANGELOG.md
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
