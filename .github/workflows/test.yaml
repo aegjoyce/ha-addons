@@ -15,11 +15,7 @@ jobs:
         uses: actions/checkout@v3.3.0
       - name: If newer tag available, bump the changelog
         run: |
-          sed -i  "6i \
-          ## [${{ steps.latest.outputs.tag }}]\
-          ### Changed\
-          - Update base image to ${{ steps.latest.outputs.tag }}\
-          " ${{ github.workspace }}/scrypted/CHANGELOG.md
+          sed -i  "6i \n## [${{ steps.latest.outputs.tag }}]\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted/CHANGELOG.md
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
