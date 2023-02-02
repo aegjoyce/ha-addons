@@ -1,7 +1,7 @@
 name: Update Scrypted Lite
 on:
   schedule:
-    - cron: 0 12 * * *
+    - cron: 0,5,10 12 * * *
   workflow_dispatch:
 jobs:
   Get-Remote-Version-Bump:
