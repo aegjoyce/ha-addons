@@ -12,7 +12,6 @@ CHANGELOG_PATH = os.path.abspath(os.path.join(MY_DIRECTORY, "../scrypted/CHANGEL
 
 def main(new_version: str):
     cl = Changelog(source=CHANGELOG_PATH)
-    cl.parse_original_content()
     cl.add_entry(ChangelogEntry(new_version, date.today(), {"Changed": [f"Update base image to {new_version}"]}))
     with open(CHANGELOG_PATH, "w") as f:
         f.write(cl.to_string())
