@@ -16,3 +16,8 @@ def main(new_version: str):
     cl.add_entry(ChangelogEntry(new_version, date.today(), {"Changed": [f"Update base image to {new_version}"]}))
     with open(CHANGELOG_PATH, "w") as f:
         f.write(cl.to_string())
+    
+if __name__ == "__main__":
+    new_version = sys.argv[1].lstrip("v")
+    main(new_version)
+    
