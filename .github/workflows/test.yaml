@@ -1,0 +1,28 @@
+name: Test
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest tag
+        id: latest
+        run: |
+          echo "tag=$( \
+          curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
+          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-full-"))][0] | .name | ltrimstr("18-bullseye-full-")')" >> $GITHUB_OUTPUT
+      - name: Check out repository code
+        uses: actions/checkout@v3.3.0
+      - name: If newer tag available, bump the changelog
+        run: |
+          sed -i  "6i \
+          ## [${{ steps.latest.outputs.tag }}]\
+          ### Changed\
+          - Update base image to ${{ steps.latest.outputs.tag }}\
+          " "" ${{ github.workspace }}/scrypted/CHANGELOG.md
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Bump Scrypted to ${{ steps.latest.outputs.tag }}
+          title: Bump Scrypted to ${{ steps.latest.outputs.tag }}
+          branch: create-pull-request/scrypted
