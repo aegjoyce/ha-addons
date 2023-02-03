@@ -13,6 +13,9 @@ jobs:
           echo "tag=$( \
           curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
           | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-lite-"))][0] | .name | ltrimstr("18-bullseye-lite-")')" >> $GITHUB_OUTPUT
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
       - name: Check out repository code
         uses: actions/checkout@v3.3.0
       - name: 🏗 Set up yq
@@ -52,7 +55,8 @@ jobs:
           python-version: "3.10.4"
       - name: If newer tag available, bump the changelog
         if: ${{ steps.version.outputs.comparison-result == '<' }}
-        run: pip install -r scripts/requirements.txt && python scripts/update_changelog_lite.py "${{ steps.latest.outputs.tag }}"
+        run: |
+          sed -i  "7i \## [${{ steps.latest.outputs.tag }}] - ${{ steps.date.outputs.date }}\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted-lite/CHANGELOG.md
       - name: Create Pull Request
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         uses: peter-evans/create-pull-request@v4
