@@ -7,7 +7,7 @@ Repository for my custom add-ons.
 ## Scrypted
 
 ![aarch64-support](https://img.shields.io/badge/aarch64-yes-green.svg)
-![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted/latest_tag?trim=major&label=latest)
+![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted/latest_tag?color=#4682B4&trim=major&label=latest)
 ![amd64-support](https://img.shields.io/badge/amd64-yes-green.svg)
 ![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted/latest_tag?trim=major&label=latest)
 ![armv7-support](https://img.shields.io/badge/armv7-yes-green.svg)
