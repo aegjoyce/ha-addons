@@ -6,11 +6,11 @@ Repository for my custom add-ons.
 
 ## Scrypted
 
-![aarch64-support](https://img.shields.io/badge/aarch64-yes-green.svg)
-![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted/latest_tag?color=#4682B4&trim=major&label=latest)
-![amd64-support](https://img.shields.io/badge/amd64-yes-green.svg)
+![aarch64-support](https://img.shields.io/badge/aarch64-yes-blue.svg)
+![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted/latest_tag?color=#ffffff&trim=major&label=latest)
+![amd64-support](https://img.shields.io/badge/amd64-yes-blue.svg)
 ![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted/latest_tag?trim=major&label=latest)
-![armv7-support](https://img.shields.io/badge/armv7-yes-green.svg)
+![armv7-support](https://img.shields.io/badge/armv7-yes-blue.svg)
 ![armv7-version](https://ghcr-badge.deta.dev/aegjoyce/armv7-ha-addon-scrypted/latest_tag?trim=major&label=latest)
 
 ![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
@@ -20,11 +20,11 @@ Work-in-progress. A Scrypted add-on for high-performance HomeKit camera performa
 
 ## Scrypted Lite
 
-![aarch64-support](https://img.shields.io/badge/aarch64-yes-green.svg)
+![aarch64-support](https://img.shields.io/badge/aarch64-yes-blue.svg)
 ![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
-![amd64-support](https://img.shields.io/badge/amd64-yes-green.svg)
+![amd64-support](https://img.shields.io/badge/amd64-yes-blue.svg)
 ![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
-![armv7-support](https://img.shields.io/badge/armv7-yes-green.svg)
+![armv7-support](https://img.shields.io/badge/armv7-yes-blue.svg)
 ![armv7-version](https://ghcr-badge.deta.dev/aegjoyce/armv7-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
 
 ![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
@@ -34,11 +34,11 @@ Work-in-progress. Lite version of Scrypted with smaller image size and some depe
 
 ## Scrypted Thin
 
-![aarch64-support](https://img.shields.io/badge/aarch64-yes-green.svg)
+![aarch64-support](https://img.shields.io/badge/aarch64-yes-blue.svg)
 ![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted-thin/latest_tag?trim=major&label=latest)
-![amd64-support](https://img.shields.io/badge/amd64-yes-green.svg)
+![amd64-support](https://img.shields.io/badge/amd64-yes-blue.svg)
 ![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted-thin/latest_tag?trim=major&label=latest)
-![armv7-support](https://img.shields.io/badge/armv7-yes-green.svg)
+![armv7-support](https://img.shields.io/badge/armv7-yes-blue.svg)
 ![armv7-version](https://ghcr-badge.deta.dev/aegjoyce/armv7-ha-addon-scrypted-thin/latest_tag?trim=major&label=latest)
 
 ![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
