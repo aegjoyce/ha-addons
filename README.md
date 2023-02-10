@@ -15,7 +15,7 @@ Repository for my custom add-ons. Add to your Home Assistant by clicking the but
 ![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
 ![i386-support](https://img.shields.io/badge/i386-no-red.svg)
 
-Work-in-progress. A Scrypted add-on for high-performance HomeKit camera performance.
+A Scrypted add-on for high-performance HomeKit camera performance.
 
 ## Scrypted Lite
 
@@ -28,7 +28,7 @@ Work-in-progress. A Scrypted add-on for high-performance HomeKit camera performa
 ![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
 ![i386-support](https://img.shields.io/badge/i386-no-red.svg)
 
-Work-in-progress. Lite version of Scrypted with smaller image size and some dependencies removed.
+Lite version of Scrypted with smaller image size and some dependencies removed.
 
 ## Scrypted Thin
 
@@ -41,4 +41,4 @@ Work-in-progress. Lite version of Scrypted with smaller image size and some depe
 ![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
 ![i386-support](https://img.shields.io/badge/i386-no-red.svg)
 
-Work-in-progress. Thin version of Scrypted with smaller image size and some dependencies removed.
+Thin version of Scrypted with smaller image size and some dependencies removed.
