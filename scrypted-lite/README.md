@@ -13,8 +13,6 @@
 
 ![i386-support](https://img.shields.io/badge/i386-no-red.svg)
 
-**THIS IS A WORK-IN-PROGRESS**
-
 ## About
 
 This add-on allows you to set up Scrypted on your Home Assistant instance.
@@ -40,7 +38,3 @@ Once installed, make sure you enable Watchdog so that the Scrypted add-on will r
 Scrypted will then be accessible via the icon in the sidebar, or at **[YOUR_HOME_ASSISTANT_ADDRESS]:10443** - check the add-on logs after clicking 'Start' to confirm the server address.
 
 To export your configuration and database, make and download a backup of the Scrypted add-on. Data is stored in /scrypted_data.
-
-## To-do
-
-- Apparmor support
