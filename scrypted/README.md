@@ -1,7 +1,7 @@
 # Scrypted Add-on for Home Assistant
 
 ![aarch64-support](https://img.shields.io/badge/aarch64-yes-blue.svg)
-![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted/latest_tag?color=#ffffff&trim=major&label=latest)
+![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted/latest_tag?trim=major&label=latest)
 
 ![amd64-support](https://img.shields.io/badge/amd64-yes-blue.svg)
 ![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted/latest_tag?trim=major&label=latest)
