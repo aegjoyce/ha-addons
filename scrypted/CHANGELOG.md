@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 but this project does not adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.6.16] - 2023-02-12
+### Changed
+- Update base image to v0.6.16
+
 ## [v0.6.14] - 2023-02-09
 ### Changed
 - Update base image to v0.6.14
