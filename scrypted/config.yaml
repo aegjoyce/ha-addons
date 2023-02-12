@@ -19,6 +19,8 @@ image: "ghcr.io/aegjoyce/{arch}-ha-addon-scrypted"
 environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
 options:
-  backup_exclude: [/server, /test]
+  backup_exclude:
+    - /server
 schema:
-  backup_exclude: str
+  backup_exclude:
+    - str
