@@ -21,3 +21,6 @@ environment:
 options:
   backup_exclude:
     - /server
+schema:
+  backup_exclude:
+    - value: str
