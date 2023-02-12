@@ -1,5 +1,5 @@
 name: Scrypted Thin
-version: "v0.6.14"
+version: "v0.6.16"
 slug: scrypted-thin
 description: Thin version of Scrypted with smaller image size and some dependencies removed
 url: "https://github.com/koush/scrypted"
