@@ -22,5 +22,4 @@ options:
   backup_exclude:
     - /server
 schema:
-  backup_exclude:
-    - value: str
+  backup_exclude: str
