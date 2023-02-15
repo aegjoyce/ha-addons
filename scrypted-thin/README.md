@@ -15,7 +15,7 @@
 
 ## About
 
-This add-on allows you to set up Scrypted on your Home Assistant instance.
+This add-on allows you to set up Scrypted Thin on your Home Assistant instance.
 
 Scrypted offers many benefits, but perhaps its most useful function is providing super-low-latency HomeKit camera streaming and support for HomeKit Secure Video.
 
