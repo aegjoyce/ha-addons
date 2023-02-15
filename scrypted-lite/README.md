@@ -23,7 +23,7 @@ For more information about Scrypted, visit [the Scrypted website](https://scrypt
 
 ## System requirements
 
-- Home Assistant OS or Supervised installation running on aarch64, amd64 or armv7 architecture (if you have Home Assistant Core or Container installed then install Scrypted in a separate container using the instructions at [the Scrypted GitHub page](https://github.com/koush/scrypted))8
+- Home Assistant OS or Supervised installation running on aarch64, amd64 or armv7 architecture (if you have Home Assistant Core or Container installed then install Scrypted in a separate container using the instructions at [the Scrypted GitHub page](https://github.com/koush/scrypted))
 - At least 2GB free storage space
 - Raspberry Pi 4 or faster machine (performance noticeably worse on Raspberry Pi 3B)
 
