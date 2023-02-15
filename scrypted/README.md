@@ -21,6 +21,8 @@ Scrypted offers many benefits, but perhaps its most useful function is providing
 
 For more information about Scrypted, visit [the Scrypted website](https://scrypted.app).
 
+Not sure which Scrypted to install? Click [here](https://github.com/koush/scrypted/wiki/Docker-Image-Tags) to find out the differences between the Full, Lite and Thin versions.
+
 ## System requirements
 
 - Home Assistant OS or Supervised installation running on aarch64, amd64 or armv7 architecture (if you have Home Assistant Core or Container installed then install Scrypted in a separate container using the instructions at [the Scrypted GitHub page](https://github.com/koush/scrypted))8
