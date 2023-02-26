@@ -1,5 +1,0 @@
----
-configuration:
-  backup_exclude:
-    name: Backup exclusions
-    description: A list of folders to exclude from Home Assistant backups. Excludes "/server" by default to greatly reduce backup size.
