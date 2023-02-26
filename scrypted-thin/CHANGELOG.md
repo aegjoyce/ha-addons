@@ -7,6 +7,7 @@ but this project does not adhere to [Semantic Versioning](https://semver.org/spe
 ## [v0.6.24] - 2023-02-26
 ### Changed
 - Update base image to v0.6.24
+### Removed
 - Remove non-functional backup exclusion options
 
 ## [v0.6.22] - 2023-02-25
