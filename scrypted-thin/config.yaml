@@ -18,9 +18,5 @@ usb: true
 image: "ghcr.io/aegjoyce/{arch}-ha-addon-scrypted-thin"
 environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
-options:
-  backup_exclude:
-    - /server
-schema:
-  backup_exclude:
-    - str
+backup_exclude:
+  - /server
