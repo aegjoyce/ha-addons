@@ -7,4 +7,4 @@ labels:
   org.opencontainers.image.description: "Lite version of Scrypted with smaller image size and some dependencies removed"
   org.opencontainers.image.source: "https://github.com/aegjoyce/ha-addons"
   org.opencontainers.image.licenses: "Apache"
-  org.opencontainers.image.version: "v0.7.9"
+  org.opencontainers.image.version: "v0.7.12"
