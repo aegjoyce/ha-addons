@@ -1,5 +1,5 @@
 name: Scrypted Lite
-version: "v0.7.24"
+version: "v0.7.24-1"
 slug: scrypted-lite
 description: Lite version of Scrypted with smaller image size and some dependencies removed
 url: "https://github.com/koush/scrypted"
@@ -14,7 +14,9 @@ panel_icon: mdi:memory
 hassio_api: true
 ingress_stream: true
 host_network: true
+gpio: true
 usb: true
+uart: true
 image: "ghcr.io/aegjoyce/{arch}-ha-addon-scrypted-lite"
 environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"

@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 but this project does not adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.7.24-1] - 2023-03-23
+### Added
+- Added GPIO and UART device inputs
+
 ## [v0.7.24] - 2023-03-22
 ### Changed
 - Update base image to v0.7.24
