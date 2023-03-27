@@ -1,7 +1,7 @@
-name: Scrypted
+name: Scrypted Beta
 version: "v0.7.33"
-slug: scrypted
-description: A home automation platform powered by node.js
+slug: scrypted-beta
+description: A testing ground for updates to the Scrypted add-on. Install at own risk
 url: "https://github.com/koush/scrypted"
 arch:
   - amd64
@@ -22,3 +22,5 @@ environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
 backup_exclude:
   - /server
+map:
+  - media:rw
