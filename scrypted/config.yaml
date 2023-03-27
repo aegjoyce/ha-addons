@@ -1,5 +1,5 @@
 name: Scrypted
-version: "v0.7.36"
+version: "v0.7.36-1"
 slug: scrypted
 description: A home automation platform powered by node.js
 url: "https://github.com/koush/scrypted"
@@ -22,3 +22,5 @@ environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
 backup_exclude:
   - /server
+map:
+  - media:rw

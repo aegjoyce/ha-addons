@@ -41,6 +41,11 @@ Scrypted will then be accessible via the icon in the sidebar, or at `[YOUR_HOME_
 
 To export your configuration and database, make and download a backup of the Scrypted add-on. Data is stored in `/scrypted_data`.
 
+## NVR
+
+Users of Scrypted NVR should set their recordings directory to `/media/scrypted`. Please bear in mind that backing up this folder will substantially increase the size of your Home Assistant backups!
+
 ## Known issues
 
-- Currently it is not possible to set up the Scrypted Cloud plugin (or plugins that require login using Scrypted Cloud) via the Ingress interface. Users wishing to install this plugin should do so via the web UI (`[YOUR_HOME_ASSISTANT_ADDRESS]:10443`) for initial setup.
+- Clicking 'Scrypted' in the top left will re-open your Home Assistant dashboard within the Ingress frame
+- External links may not function correctly - workaround is to right click and open in a new tab/window
