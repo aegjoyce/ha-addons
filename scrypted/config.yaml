@@ -1,5 +1,5 @@
 name: Scrypted
-version: "v0.7.33"
+version: "v0.7.35"
 slug: scrypted
 description: A home automation platform powered by node.js
 url: "https://github.com/koush/scrypted"
