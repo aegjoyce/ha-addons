@@ -51,6 +51,9 @@ jobs:
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: |
           sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted/Dockerfile
+      - name: If newer tag available, bump the beta dockerfile
+        if: ${{ steps.version.outputs.comparison-result == '<' }}
+        run: |
           sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted-beta/Dockerfile
       - uses: actions/setup-python@v4
         if: ${{ steps.version.outputs.comparison-result == '<' }}
