@@ -30,6 +30,8 @@ jobs:
       - name: Get changed files
         id: changed_files
         uses: tj-actions/changed-files@v35.7.6
+        with:
+          files_ignore: scrypted-beta
 
       - name: Find add-on directories
         id: addons
