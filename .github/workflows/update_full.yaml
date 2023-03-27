@@ -40,15 +40,18 @@ jobs:
         shell: bash
         run: |
           yq -i '.version = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted/config.yaml
+          yq -i '.version = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-beta/config.yaml
       - name: If newer tag available, bump the package version
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         shell: bash
         run: |
           yq -i '.labels."org.opencontainers.image.version" = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted/build.yaml
+          yq -i '.labels."org.opencontainers.image.version" = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-beta/build.yaml
       - name: If newer tag available, bump the dockerfile
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: |
           sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted/Dockerfile
+          sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted-beta/Dockerfile
       - uses: actions/setup-python@v4
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         with:
@@ -57,6 +60,7 @@ jobs:
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: |
           sed -i  "7i \## [${{ steps.latest.outputs.tag }}] - ${{ steps.date.outputs.date }}\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted/CHANGELOG.md
+          sed -i  "7i \## [${{ steps.latest.outputs.tag }}] - ${{ steps.date.outputs.date }}\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted-beta/CHANGELOG.md
       - name: Create Pull Request
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         uses: peter-evans/create-pull-request@v4
