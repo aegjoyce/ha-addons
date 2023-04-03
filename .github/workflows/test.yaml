@@ -11,4 +11,5 @@ jobs:
           --url https://api.github.com/users/koush/packages/container/scrypted/versions \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'accept: application/vnd.github+json' \
-          --header 'X-GitHub-Api-Version: 2022-11-28'
+          --header 'X-GitHub-Api-Version: 2022-11-28'\
+          | jq '.[] | select(.metadata.container.tags[] == "latest").metadata.container.tags[]'
