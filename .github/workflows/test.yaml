@@ -5,11 +5,12 @@ jobs:
   Get-Version:
     runs-on: ubuntu-latest
     steps:
-      - name: Create issue using REST API
+      - name: Get latest version
         run: |
+          echo "tag=$( \
           curl --request GET \
           --url https://api.github.com/users/koush/packages/container/scrypted/versions \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'accept: application/vnd.github+json' \
           --header 'X-GitHub-Api-Version: 2022-11-28'\
-          | jq '.[] | select(.metadata.container.tags[] == "latest").metadata.container.tags[]'
+          | jq '.[] | select(.metadata.container.tags[] == "latest").metadata.container.tags[0]' | ltrimstr("18-bullseye-full-")
