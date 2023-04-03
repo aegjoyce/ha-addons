@@ -11,8 +11,15 @@ jobs:
         id: latest
         run: |
           echo "tag=$( \
-          curl https://hub.docker.com/v2/repositories/koush/scrypted/tags?count=1000 \
-          | jq -r '[.results | sort_by(.last_updated) | reverse[] | select(.name | startswith("18-bullseye-thin-"))][0] | .name | ltrimstr("18-bullseye-thin-")')" >> $GITHUB_OUTPUT
+          curl --request GET \
+          --url https://api.github.com/users/koush/packages/container/scrypted/versions \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'accept: application/vnd.github+json' \
+          --header 'X-GitHub-Api-Version: 2022-11-28'\
+          | jq '.[] | select(.metadata.container.tags[] == "latest").metadata.container.tags[0]' \
+          | sed 's/^.*-v/v/' \
+          | sed 's/["]//g' \
+          )" >> $GITHUB_OUTPUT
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
@@ -57,10 +64,8 @@ jobs:
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: |
           sed -i  "7i \## [${{ steps.latest.outputs.tag }}] - ${{ steps.date.outputs.date }}\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted-thin/CHANGELOG.md
-      - name: Create Pull Request
+      - name: Commit
+        uses: stefanzweifel/git-auto-commit-action@v4
         if: ${{ steps.version.outputs.comparison-result == '<' }}
-        uses: peter-evans/create-pull-request@v4
         with:
-          commit-message: Bump Scrypted Thin to ${{ steps.latest.outputs.tag }}
-          title: Bump Scrypted Thin to ${{ steps.latest.outputs.tag }}
-          branch: create-pull-request/scrypted-thin
+          commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
