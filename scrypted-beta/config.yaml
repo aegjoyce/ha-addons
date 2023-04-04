@@ -24,3 +24,12 @@ backup_exclude:
   - /server
 map:
   - media:rw
+options:
+  env_vars: []
+schema:
+  env_vars:
+    - name: match(^SCRYPTED_([A-Z0-9_])+$)
+      value: str
+
+# The file scrypted\rootfs\etc\services.d\scrypted-run\run contains the logic to export all env_vars, since we need this when starting Scrypted. 
+# The file scrypted\rootfs\etc\services.d\nginx\run contains the logic to export all env_vars, since we also need the token in an nginx config. 
