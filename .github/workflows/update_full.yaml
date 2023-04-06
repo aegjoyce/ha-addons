@@ -1,10 +1,10 @@
-name: Update Scrypted Full
+name: Update Scrypted
 on:
   schedule:
-    - cron: 0,5,10 12 * * *
+    - cron: 0 * * * *
   workflow_dispatch:
 jobs:
-  Get-Remote-Version-Bump:
+  Update:
     runs-on: ubuntu-latest
     steps:
       - name: Get latest tag
@@ -48,17 +48,23 @@ jobs:
         shell: bash
         run: |
           yq -i '.version = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted/config.yaml
+          yq -i '.version = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-lite/config.yaml
+          yq -i '.version = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-thin/config.yaml
           yq -i '.version = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-beta/config.yaml
       - name: If newer tag available, bump the package version
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         shell: bash
         run: |
           yq -i '.labels."org.opencontainers.image.version" = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted/build.yaml
+          yq -i '.labels."org.opencontainers.image.version" = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-lite/build.yaml
+          yq -i '.labels."org.opencontainers.image.version" = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-thin/build.yaml
           yq -i '.labels."org.opencontainers.image.version" = "${{ steps.latest.outputs.tag }}"' ${{ github.workspace }}/scrypted-beta/build.yaml
       - name: If newer tag available, bump the dockerfile
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: |
           sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted/Dockerfile
+          sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted-lite/Dockerfile
+          sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted-thin/Dockerfile
           sed -i "s/${{ steps.current.outputs.tag }}/${{ steps.latest.outputs.tag }}/g" ${{ github.workspace }}/scrypted-beta/Dockerfile
       - uses: actions/setup-python@v4
         if: ${{ steps.version.outputs.comparison-result == '<' }}
@@ -68,9 +74,12 @@ jobs:
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         run: |
           sed -i  "7i \## [${{ steps.latest.outputs.tag }}] - ${{ steps.date.outputs.date }}\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted/CHANGELOG.md
+          sed -i  "7i \## [${{ steps.latest.outputs.tag }}] - ${{ steps.date.outputs.date }}\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted-lite/CHANGELOG.md
+          sed -i  "7i \## [${{ steps.latest.outputs.tag }}] - ${{ steps.date.outputs.date }}\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted-thin/CHANGELOG.md
           sed -i  "7i \## [${{ steps.latest.outputs.tag }}] - ${{ steps.date.outputs.date }}\n### Changed\n- Update base image to ${{ steps.latest.outputs.tag }}\n" ${{ github.workspace }}/scrypted-beta/CHANGELOG.md
-      - name: Commit
+      - name: If newer tag available, commit and tag release
         uses: stefanzweifel/git-auto-commit-action@v4
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         with:
           commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
+          tagging_message: "${{ steps.latest.outputs.tag }}"
