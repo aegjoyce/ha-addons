@@ -12,12 +12,11 @@ jobs:
         run: |
           echo "tag=$( \
           curl --request GET \
-          --url https://api.github.com/users/koush/packages/container/scrypted/versions \
+          --url https://api.github.com/repos/koush/scrypted/releases \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'accept: application/vnd.github+json' \
           --header 'X-GitHub-Api-Version: 2022-11-28'\
-          | jq '.[] | select(.metadata.container.tags[] == "latest").metadata.container.tags[0]' \
-          | sed 's/^.*-v/v/' \
+          | jq '.[0].tag_name' \
           | sed 's/["]//g' \
           )" >> $GITHUB_OUTPUT
       - name: Get current date
