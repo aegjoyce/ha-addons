@@ -82,4 +82,8 @@ jobs:
         if: ${{ steps.version.outputs.comparison-result == '<' }}
         with:
           commit_message: "Bump to ${{ steps.latest.outputs.tag }}"
-          tagging_message: "${{ steps.latest.outputs.tag }}"
+      - name: If newer tag available, create Release
+        if: ${{ steps.version.outputs.comparison-result == '<' }}
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "${{ steps.latest.outputs.tag }}"
