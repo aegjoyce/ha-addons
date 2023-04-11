@@ -17,7 +17,7 @@ host_network: true
 gpio: true
 usb: true
 uart: true
-image: "ghcr.io/aegjoyce/{arch}-ha-addon-scrypted"
+image: "ghcr.io/aegjoyce/{arch}-ha-addon-scrypted-beta"
 environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
 backup_exclude:
