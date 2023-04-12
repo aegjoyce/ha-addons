@@ -3,6 +3,8 @@
 # Home Assistant Community Add-on: Log Viewer
 # Runs the Log Viewer
 # ==============================================================================
+declare name
+declare value
 bashio::log.info "Starting Scrypted..."
 
 # Ensure the configuration exists
@@ -15,5 +17,13 @@ else
     # Copy in template file
     cp /etc/options.json /config/data_scrypted/
 fi
+
+
+for var in $(bashio::config 'env_vars|keys'); do
+    name=$(bashio::config "env_vars[${var}].name")
+    value=$(bashio::config "env_vars[${var}].value")
+    bashio::log.info "Setting ${name} in scrypted run" 
+    export "${name}=${value}"
+done
 
 cd /server && npm exec scrypted-serve

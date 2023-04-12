@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 but this project does not adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.7.53-1] - 2023-04-12
+### Added
+- Add user-configurable environment variables - all credit and thanks to @Mich-b
+### Changed
+- Update authentication to allow correct rendering of images and video in NVR plugin - all credit and thanks to @Mich-b
+
 ## [v0.7.53] - 2023-04-08
 ### Changed
 - Update base image to v0.7.53

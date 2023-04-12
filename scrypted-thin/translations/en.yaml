@@ -1,0 +1,5 @@
+---
+configuration:
+  env_vars:
+    name: Environment variables
+    description: A list of environment variables that you want to set. Only accepts environment variables that start with "SCRYPTED_". 

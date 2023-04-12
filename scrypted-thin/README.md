@@ -43,7 +43,7 @@ To export your configuration and database, make and download a backup of the Scr
 
 ## NVR
 
-Users of Scrypted NVR should set their recordings directory to `/media/scrypted`. Please bear in mind that backing up this folder will substantially increase the size of your Home Assistant backups!
+Users of Scrypted NVR should set their recordings directory to `/media/scrypted`. Please bear in mind that backing up this folder will substantially increase the size of your Home Assistant backups unless you exclude this folder as part of a partial backup!
 
 ## Known issues
 
