@@ -1,17 +1,11 @@
 # Scrypted Lite Add-on for Home Assistant
 
-![aarch64-support](https://img.shields.io/badge/aarch64-yes-blue.svg)
-![aarch64-version](https://ghcr-badge.deta.dev/aegjoyce/aarch64-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Faegjoyce%2Fha-addons)
+![stars](https://img.shields.io/github/stars/aegjoyce/ha-addons?color=gold&style=for-the-badge)
 
-![amd64-support](https://img.shields.io/badge/amd64-yes-blue.svg)
-![amd64-version](https://ghcr-badge.deta.dev/aegjoyce/amd64-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
-
-![armv7-support](https://img.shields.io/badge/armv7-yes-blue.svg)
-![armv7-version](https://ghcr-badge.deta.dev/aegjoyce/armv7-ha-addon-scrypted-lite/latest_tag?trim=major&label=latest)
-
-![armhf-support](https://img.shields.io/badge/armhf-no-red.svg)
-
-![i386-support](https://img.shields.io/badge/i386-no-red.svg)
+![version](https://img.shields.io/github/v/release/aegjoyce/ha-addons?color=blue&style=flat-square)
+![supported](https://img.shields.io/badge/supported-aarch64%20%7C%20amd64%20%7C%20armv7-green?style=flat-square)
+![unsupported](https://img.shields.io/badge/unsupported-armhf%20%7C%20i386-red?style=flat-square)
 
 ## About
 
