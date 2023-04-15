@@ -27,19 +27,34 @@ Not sure which Scrypted to install? Click [here](https://github.com/koush/scrypt
 
 Add the repository [https://github.com/aegjoyce/ha-addons](https://github.com/aegjoyce/ha-addons) in Home Assistant (see [here](https://www.home-assistant.io/hassio/installing_third_party_addons/) for more information).
 
-Then select the Scrypted add-on and click Install. **This may take 5-10 minutes to complete as the image is approximately 2GB in size.**
+Then select the Scrypted add-on and click Install.
 
 Once installed, make sure you enable Watchdog so that the Scrypted add-on will restart automatically if you need to restart Scrypted from within its UI, and add Scrypted to the sidebar.
 
-Scrypted will then be accessible via the icon in the sidebar, or at `[YOUR_HOME_ASSISTANT_ADDRESS]:10443` - check the add-on logs after clicking 'Start' to confirm the server address.
+Scrypted will then be accessible via the icon in the sidebar, or at `[YOUR_HOME_ASSISTANT_ADDRESS_OR_IP]:10443` - check the add-on logs after clicking 'Start' to confirm the server address.
 
 To export your configuration and database, make and download a backup of the Scrypted add-on. Data is stored in `/scrypted_data`.
 
+## Backup
+
+Scrypted server files will not be backed up in order to reduce backup size and time. User configuration and database will be backed up. If backups are getting too big then exclude the add-on from your routine backups.
+
+## Import and export
+
+It is possible to import an existing Scrypted configuation into the add-on by following this procedure:
+1. Make a partial Home Assistant backup of the Scrypted add-on
+2. Download the backup and delete it from Home Assistant
+3. Extract the contents of the add-on and replace the contents of `/scrypted_data` with the database and configuration files you want to import
+4. Re-compress the backup into a `.tar.gz` and re-upload to Home Assistant (Settings/System/Backups/Upload backup)
+5. Restore the backup
+
+To export your Scrypted configuration, follow steps 1-3 and copy the contents of `/scrypted_data` to your new Scrypted instance.
+
 ## NVR
 
-Users of Scrypted NVR should set their recordings directory to `/media/scrypted`. Please bear in mind that backing up this folder will substantially increase the size of your Home Assistant backups unless you exclude this folder as part of a partial backup!
+Users of Scrypted NVR should set their recordings directory to `/data/recordings`. If you wish to separate your recordings from the rest of your Scrypted data (for backup reasons, etc.) then you can instead choose to save to the `/media` folder (with an appropriate subfolder).
 
 ## Known issues
 
 - Clicking 'Scrypted' in the top left will re-open your Home Assistant dashboard within the Ingress frame
-- External links may not function correctly - workaround is to right click and open in a new tab/window
+- Some functions (external links, logins, etc.) are not yet optimised for Ingress - if something isn't working, try setting it up via `[YOUR_HOME_ASSISTANT_ADDRESS_OR_IP]:10443`.
