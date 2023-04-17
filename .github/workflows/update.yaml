@@ -23,7 +23,7 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
       - name: Check out repository code
-        uses: actions/checkout@v3.5.0
+        uses: actions/checkout@v3.5.2
         with:
           token: ${{ secrets.PAT }}
       - name: 🏗 Set up yq
