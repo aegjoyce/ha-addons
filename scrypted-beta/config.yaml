@@ -1,5 +1,5 @@
 name: Scrypted Beta
-version: "v0.7.81-1"
+version: "v0.7.81-2"
 slug: scrypted-beta
 description: A testing ground for updates to the Scrypted add-on. Install at own risk
 url: "https://github.com/koush/scrypted"
@@ -23,7 +23,6 @@ environment:
 backup_exclude:
   - /server
 map:
-  - config
   - media:rw
 options:
   env_vars: []
