@@ -8,14 +8,14 @@ declare value
 bashio::log.info "Starting Scrypted..."
 
 # Ensure the configuration exists
-if bashio::fs.file_exists '/config/data_scrypted/options.json'; then
-    cp -f /config/data_scrypted/options.json /etc/options
+if bashio::fs.file_exists '/data/config/options.json'; then
+    cp -f -v /data/config/options.json /etc/options
 else
-    mkdir -p /config/data_scrypted \
+    mkdir -p -v /data/config \
         || bashio::exit.nok "Failed to create the Scrypted configuration directory"
 
     # Copy in template file
-    cp /etc/options.json /config/data_scrypted/
+    cp -v /etc/options.json /data/config/
 fi
 
 
