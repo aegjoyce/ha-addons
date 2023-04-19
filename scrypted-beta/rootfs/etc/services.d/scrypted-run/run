@@ -13,12 +13,12 @@ if bashio::fs.file_exists '/config/data_scrypted/options.json'; then
     cp -f /config/data_scrypted/options.json /etc/options
 else
     bashio::log.info "Making config directory"
-    mkdir -p /config/data_scrypted \
+    mkdir -p -v /config/data_scrypted \
         || bashio::exit.nok "Failed to create the Scrypted configuration directory"
 
     # Copy in template file
     bashio::log.info "Copying template file"
-    cp /etc/options.json /config/data_scrypted/
+    cp -v /etc/options.json /config/data_scrypted/
 fi
 
 
