@@ -1,5 +1,5 @@
 name: Scrypted Beta
-version: "v0.7.85-1"
+version: "v0.7.85-2"
 slug: scrypted-beta
 description: A testing ground for updates to the Scrypted add-on. Install at own risk
 url: "https://github.com/koush/scrypted"
@@ -17,6 +17,7 @@ host_network: true
 gpio: true
 usb: true
 uart: true
+video: true
 image: "ghcr.io/aegjoyce/{arch}-ha-addon-scrypted-beta"
 environment:
   SCRYPTED_VOLUME: "/data/scrypted_data"
@@ -35,5 +36,14 @@ privileged:
   - SYS_RAWIO
 devices:
   - /dev/mem
+  - /dev/dri/renderD128
+  - /dev/apex_0
+  - /dev/apex_1
+  - /dev/apex_2
+  - /dev/apex_3
+  - /dev/dri/card0
+  - /dev/vchiq
+  - /dev/video10
+  - /dev/video0
 # The file scrypted\rootfs\etc\services.d\scrypted-run\run contains the logic to export all env_vars, since we need this when starting Scrypted. 
 # The file scrypted\rootfs\etc\services.d\nginx\run contains the logic to export all env_vars, since we also need the token in an nginx config. 
