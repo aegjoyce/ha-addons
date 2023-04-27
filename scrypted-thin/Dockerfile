@@ -59,7 +59,7 @@ RUN rm -rf /etc/nginx/sites-enabled/default
 # Install Scrypted
 WORKDIR /
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
-ARG SCRYPTED_INSTALL_VERSION="v0.7.92"
+ARG SCRYPTED_INSTALL_VERSION="v0.7.94"
 RUN test -n "$SCRYPTED_INSTALL_VERSION"
 RUN npx -y scrypted@latest install-server ${SCRYPTED_INSTALL_VERSION}
 
