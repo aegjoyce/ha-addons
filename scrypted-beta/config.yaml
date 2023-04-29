@@ -28,12 +28,12 @@ map:
   - config
 options:
   env_vars:
-    - name: SCRYPTED_NVR_VOLUME
-      value: /data/scrypted_data/recordings
     - name: SCRYPTED_ADMIN_USERNAME
       value: homeassistant
     - name: SCRYPTED_ADMIN_TOKEN
       value: homeassistant
+    - name: SCRYPTED_NVR_VOLUME
+      value: /data/scrypted_data/recordings
 schema:
   env_vars:
     - name: match(^SCRYPTED_([A-Z0-9_])+$)

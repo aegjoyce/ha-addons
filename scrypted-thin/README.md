@@ -37,7 +37,7 @@ To export your configuration and database, make and download a backup of the Scr
 
 ## Backup
 
-Scrypted server files will not be backed up in order to reduce backup size and time. User configuration and database will be backed up. If backups are getting too big then exclude the add-on from your routine backups.
+Scrypted server files and NVR recordings will not be backed up in order to reduce backup size and time. User configuration and database will be backed up. If backups are getting too big then exclude the add-on from your routine backups.
 
 ## Import and export
 
@@ -49,10 +49,6 @@ It is possible to import an existing Scrypted configuation into the add-on by fo
 5. Restore the backup
 
 To export your Scrypted configuration, follow steps 1-3 and copy the contents of `/scrypted_data` to your new Scrypted instance.
-
-## NVR
-
-Users of Scrypted NVR should set their recordings directory to `/data/recordings`. If you wish to separate your recordings from the rest of your Scrypted data (for backup reasons, etc.) then you can instead choose to save to the `/media` folder (with an appropriate subfolder).
 
 ## Known issues
 

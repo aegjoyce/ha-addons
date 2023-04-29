@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 but this project does not adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.7.97-2] - 2023-04-29
+### BREAKING CHANGES
+- Starting with this release the add-on will automatically log in using preset credentials, preventing you from having to manually log in.
+  - New users will be logged in with the username `homeassistant`.
+  - Existing users will remain logged in with their username but will see the `homeassistant` user in their Scrypted Users list.
+  - To change the default password (`homeassistant`) change the `SCRYPTED_ADMIN_TOKEN` in the add-on Configuration menu.
+  - To remove the default `homeassistant` user, remove the `SCRYPTED_ADMIN_USERNAME` and `SCRYPTED_ADMIN_TOKEN` entries from the add-on Configuration menu.
+- NVR recordings will be stored in `/data/scrypted_data/recordings` by default.
+  - This folder will **not** be included in add-on backups in order to preserve storage space.
+  - Recordings can be backed up by setting the storage location to `/data/recordings`. **THIS IS NOT RECOMMENDED.**
+  - Access to the Home Assistant `media` folder has been removed.
+### Added
+- Added support for Coral TPUs
+
 ## [v0.7.97] - 2023-04-28
 ### Changed
 - Update base image to v0.7.97
