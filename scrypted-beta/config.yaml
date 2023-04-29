@@ -1,5 +1,5 @@
 name: Scrypted Beta
-version: "v0.7.97-1"
+version: "v0.7.97-2"
 slug: scrypted-beta
 description: A testing ground for updates to the Scrypted add-on. Install at own risk
 url: "https://github.com/koush/scrypted"
@@ -30,6 +30,10 @@ options:
   env_vars:
     - name: SCRYPTED_NVR_VOLUME
       value: /data/scrypted_data/recordings
+    - name: SCRYPTED_ADMIN_USERNAME
+      value: homeassistant
+    - name: SCRYPTED_ADMIN_TOKEN
+      value: homeassistant
 schema:
   env_vars:
     - name: match(^SCRYPTED_([A-Z0-9_])+$)
