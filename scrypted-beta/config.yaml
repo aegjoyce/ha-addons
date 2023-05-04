@@ -49,3 +49,4 @@ devices:
   - /dev/vchiq
   - /dev/video10
   - /dev/video0
+
