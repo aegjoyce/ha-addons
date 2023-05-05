@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 but this project does not adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.7.97-3] - 2023-05-05
+### Changed
+- Removed Ingress subfilters
+- Frame stacking issue fixed on backend (thanks @Koush)
+
 ## [v0.7.97-2] - 2023-04-29
 ### BREAKING CHANGES
 - Starting with this release the add-on will automatically log in using preset credentials, preventing you from having to manually log in.
