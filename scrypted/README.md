@@ -52,5 +52,4 @@ To export your Scrypted configuration, follow steps 1-3 and copy the contents of
 
 ## Known issues
 
-- Clicking 'Scrypted' in the top left will re-open your Home Assistant dashboard within the Ingress frame
 - Some functions (external links, logins, etc.) are not yet optimised for Ingress - if something isn't working, try setting it up via `[YOUR_HOME_ASSISTANT_ADDRESS_OR_IP]:10443`.
