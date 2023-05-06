@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 but this project does not adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.7.97-4] - 2023-05-06
+### Changed
+- Changes to backup exclusions
+
 ## [v0.7.97-3] - 2023-05-05
 ### Changed
 - Removed Ingress subfilters
